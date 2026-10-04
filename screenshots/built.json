@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Venkat — AI Engineer",
+      "hasCanvas": false,
+      "bodyTextLen": 3818,
+      "bodyTextHash": "5d4ac5bfdef91b25b7dd2700f4732bcf65848a5d1ecec9e9deefb308692b43af",
+      "bodyTextPrefix": "Skip to content VP Home Research Open Source Projects Search ⌘K ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Venkat — AI Engineer",
+      "hasCanvas": false,
+      "bodyTextLen": 3811,
+      "bodyTextHash": "4df105672ca097aeaf84e4cc13e30708322f65fc85cfff6997027d8524b39f67",
+      "bodyTextPrefix": "Skip to content VP ⌘K Home Research Open Source Projects YOUR 8:",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/built.json"
+}
