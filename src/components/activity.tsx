@@ -1,9 +1,8 @@
 import type { Contribution, GithubActivity } from "@/data/github";
 import { githubUser } from "@/data/github";
-import { SectionHeading } from "@/components/section-heading";
 
 const GAP = 2;
-const LEVEL = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"];
+const LEVEL = ["var(--heat-0)", "var(--heat-1)", "var(--heat-2)", "var(--heat-3)", "var(--heat-4)"];
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 function weeksOf(days: Contribution[]) {
@@ -48,14 +47,13 @@ export function Activity({ activity }: { activity: GithubActivity | null }) {
   const profile = `https://github.com/${githubUser}`;
 
   return (
-    <section id="activity" className="scroll-mt-24 py-8 sm:py-12" aria-labelledby="activity-title">
-      <SectionHeading id="activity-title" title="activity" />
+    <section id="activity" className="scroll-mt-24 pt-6 pb-2" aria-label="GitHub activity">
       {activity ? (
         <Graph activity={activity} profile={profile} />
       ) : (
         <p className="mt-3 text-sm text-muted">
           Contribution graph is unavailable right now.{" "}
-          <a href={profile} target="_blank" rel="noreferrer" className="text-fg underline">
+          <a href={profile} className="underline" target="_blank" rel="noreferrer">
             See GitHub
           </a>
           .
@@ -71,20 +69,7 @@ function Graph({ activity, profile }: { activity: GithubActivity; profile: strin
   const total = activity.total;
 
   return (
-    <figure className="mt-5">
-      <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-        <figcaption className="font-mono text-[11px] tracking-wide text-muted uppercase">
-          {total.toLocaleString("en-US")} contributions · {activity.year}
-        </figcaption>
-        <a
-          href={profile}
-          target="_blank"
-          rel="noreferrer"
-          className="text-xs text-faint hover:text-fg"
-        >
-          github.com/{githubUser}
-        </a>
-      </div>
+    <figure className="mt-2">
       <div className="flex gap-2">
         <div className="mt-5 grid shrink-0 grid-rows-7 gap-0.5 text-[9px] leading-none text-faint">
           <span />
@@ -136,16 +121,19 @@ function Graph({ activity, profile }: { activity: GithubActivity; profile: strin
           </div>
         </div>
       </div>
-      <div className="mt-3 flex items-center justify-end gap-1 text-[10px] text-faint">
-        <span>Less</span>
-        {LEVEL.map((color) => (
-          <span
-            key={color}
-            className="block size-2.5 rounded-[2px] sm:size-[11px]"
-            style={{ background: color }}
-          />
-        ))}
-        <span>More</span>
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] tracking-wide text-faint uppercase">
+        <figcaption>
+          <a href={profile} target="_blank" rel="noreferrer" className="hover:text-fg">
+            {total.toLocaleString("en-US")} contributions · {activity.year}
+          </a>
+        </figcaption>
+        <div className="flex items-center gap-1">
+          <span>Less</span>
+          {LEVEL.map((color) => (
+            <span key={color} className="block size-2.5 rounded-[2px]" style={{ background: color }} />
+          ))}
+          <span>More</span>
+        </div>
       </div>
     </figure>
   );

@@ -1,6 +1,6 @@
-import { Github } from "lucide-react";
+import { Github, Mail, MapPin } from "lucide-react";
 import { profile } from "@/data/profile";
-import { meetUrl, socials } from "@/data/socials";
+import { socials } from "@/data/socials";
 
 function XIcon() {
   return (
@@ -18,45 +18,58 @@ function LinkedInIcon() {
   );
 }
 
-const iconLink = "inline-flex size-10 items-center justify-center text-fg hover:text-muted";
+const iconLink = "inline-flex size-10 items-center justify-center text-fg hover:opacity-50";
 
 export function Hero() {
   return (
-    <section id="top" className="scroll-mt-24 pt-8 pb-2">
-      <h1 className="flex flex-wrap items-center gap-x-2.5 gap-y-2 text-[1.85rem] leading-tight font-semibold tracking-tight text-fg sm:gap-x-3 sm:text-5xl sm:leading-[1.15] lg:text-[3.375rem] lg:leading-[1.2]">
-        <span>Hey, I'm</span>
+    <section id="top" className="scroll-mt-24 pt-6 pb-2">
+      <div className="flex items-center gap-4">
         <img
           src="/profile.jpg"
           alt=""
-          width={46}
-          height={46}
-          className="size-9 rounded-lg bg-white object-contain sm:size-11 sm:rounded-xl"
+          width={72}
+          height={72}
+          className="size-16 rounded-2xl border border-line bg-surface object-contain sm:size-[72px]"
         />
-        <span>{profile.name}</span>
-      </h1>
-      <div className="mt-6 max-w-xl space-y-3 text-[15px] leading-relaxed text-fg/90 sm:mt-8 sm:space-y-4 sm:text-base">
-        <p>
-          I'm an <span className="font-semibold text-fg">AI Engineer</span>.
-        </p>
-        <p>
-          I build agentic systems, retrieval, and the backends around them. The model can reason.{" "}
-          <span className="font-semibold text-fg">Policy still decides</span>.
-        </p>
-        <p>
-          I mostly work with <span className="font-medium text-fg">Python</span>,{" "}
-          <span className="font-medium text-fg">FastAPI</span>,{" "}
-          <span className="font-medium text-fg">LangGraph</span>, and{" "}
-          <span className="font-medium text-fg">local LLMs</span>.
-        </p>
-        <p>
-          Want to work together?{" "}
-          <a href={meetUrl} target="_blank" rel="noreferrer" className="text-fg underline underline-offset-4">
-            Let's talk
-          </a>
-          . Based in India.
-        </p>
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight text-fg sm:text-[2rem]">{profile.name}</h1>
+          <p className="mt-1 text-sm text-muted">AI Engineer</p>
+        </div>
       </div>
-      <div className="mt-5 flex items-center gap-1">
+
+      <dl className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div>
+          <dt className="text-[11px] tracking-wider text-faint uppercase">Location</dt>
+          <dd className="mt-1 flex items-center gap-1.5 text-sm text-fg">
+            <MapPin className="size-3.5" aria-hidden="true" />
+            India
+          </dd>
+        </div>
+        <div>
+          <dt className="text-[11px] tracking-wider text-faint uppercase">Email</dt>
+          <dd className="mt-1 text-sm">
+            <a href={`mailto:${socials.email}`} className="inline-flex items-center gap-1.5 hover:underline">
+              <Mail className="size-3.5" aria-hidden="true" />
+              {socials.email}
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt className="text-[11px] tracking-wider text-faint uppercase">GitHub</dt>
+          <dd className="mt-1 text-sm">
+            <a href={socials.github} target="_blank" rel="noreferrer" className="hover:underline">
+              venkatpachala
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <p className="mt-6 max-w-2xl text-sm leading-relaxed text-fg sm:text-[15px]">
+        I build agentic systems, retrieval, and the backends around them. The model can reason.
+        Policy still decides. Currently working on self-corrective and self-evolving agents.
+      </p>
+
+      <div className="mt-4 flex items-center gap-1">
         <a href={socials.x} target="_blank" rel="noreferrer" aria-label="X" className={iconLink}>
           <XIcon />
         </a>

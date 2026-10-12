@@ -14,7 +14,6 @@ import {
   siQdrant,
   type SimpleIcon,
 } from "simple-icons";
-import { SectionHeading } from "@/components/section-heading";
 
 const icons: SimpleIcon[] = [
   siPython,
@@ -41,22 +40,20 @@ function isDark(hex: string) {
 
 export function Skills() {
   return (
-    <section id="stack" className="scroll-mt-24 py-8 sm:py-12" aria-labelledby="stack-title">
-      <SectionHeading id="stack-title" title="tech stack" />
-      <ul className="mt-5 flex flex-wrap gap-2">
+    <section id="stack" className="scroll-mt-24 py-8" aria-labelledby="stack-title">
+      <h2 id="stack-title" className="text-[11px] tracking-[0.16em] text-faint uppercase">
+        Tech stack
+      </h2>
+      <ul className="mt-4 flex flex-wrap gap-3">
         {icons.map((icon) => (
-          <li
-            key={icon.slug}
-            className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-transparent px-2.5 py-1.5 text-[13px] text-fg transition-transform hover:-translate-y-0.5"
-          >
-            <span
-              className={`flex size-4 shrink-0 items-center justify-center ${isDark(icon.hex) ? "rounded-[3px] bg-white" : ""}`}
-            >
-              <svg viewBox="0 0 24 24" className="size-3.5" aria-hidden="true">
-                <path d={icon.path} fill={`#${icon.hex}`} />
-              </svg>
-            </span>
-            {icon.title}
+          <li key={icon.slug} title={icon.title}>
+            <span className="sr-only">{icon.title}</span>
+            <svg viewBox="0 0 24 24" className="size-8 text-fg" aria-hidden="true">
+              <path
+                d={icon.path}
+                fill={isDark(icon.hex) ? "currentColor" : `#${icon.hex}`}
+              />
+            </svg>
           </li>
         ))}
       </ul>

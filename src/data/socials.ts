@@ -3,7 +3,7 @@ export const socials = {
   github: "https://github.com/venkatpachala",
   x: "https://x.com/Venkatpachalaa",
   linkedin: "https://www.linkedin.com/in/venkata-sai-teja-vnrvjiet",
-  email: "",
+  email: "venkatasai0204@gmail.com",
 } as const;
 
 /** Opens Google Calendar so someone can put a meeting on the primary calendar. */

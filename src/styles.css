@@ -1,35 +1,72 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, monospace;
+@theme inline {
+  --font-sans: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --color-bg: #0a0a0a;
-  --color-surface: #111111;
-  --color-raised: #161616;
-  --color-line: rgba(255, 255, 255, 0.12);
-  --color-primary: #f5f5f5;
-  --color-primary-soft: #ffffff;
-  --color-fg: #f5f5f5;
-  --color-muted: #a3a3a3;
-  --color-faint: #737373;
-  --color-status: #f5f5f5;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-line: var(--line);
+  --color-primary: var(--fg);
+  --color-primary-soft: var(--fg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-status: var(--fg);
 
-  --radius-card: 0.875rem;
+  --radius-card: 1rem;
+}
+
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --raised: #f6f6f6;
+  --line: rgba(0, 0, 0, 0.1);
+  --fg: #111111;
+  --muted: #4a4a4a;
+  --faint: #8a8a8a;
+  --grid: rgba(0, 0, 0, 0.045);
+  --heat-0: #ebedf0;
+  --heat-1: #d0d7de;
+  --heat-2: #9aa3ad;
+  --heat-3: #6e7781;
+  --heat-4: #32383f;
+  color-scheme: light;
+}
+
+html.dark {
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --raised: #1a1a1a;
+  --line: rgba(255, 255, 255, 0.12);
+  --fg: #f5f5f5;
+  --muted: #c4c4c4;
+  --faint: #8a8a8a;
+  --grid: rgba(255, 255, 255, 0.06);
+  --heat-0: #161b22;
+  --heat-1: #0e4429;
+  --heat-2: #006d32;
+  --heat-3: #26a641;
+  --heat-4: #39d353;
+  color-scheme: dark;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
   }
 
   body {
-    background-color: #0a0a0a;
-    color: #ffffff;
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(to right, var(--grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+    background-size: 72px 72px;
+    color: var(--fg);
     font-family: var(--font-sans);
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
@@ -42,8 +79,8 @@
   }
 
   ::selection {
-    background: rgba(255, 255, 255, 0.22);
-    color: #ffffff;
+    background: rgba(0, 0, 0, 0.12);
+    color: var(--fg);
   }
 
   :focus-visible {

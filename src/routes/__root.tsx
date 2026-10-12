@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       { title: APP_NAME },
       { name: "description", content: APP_DESCRIPTION },
       { name: "author", content: "Venkat" },
-      { name: "theme-color", content: "#0A0A0A" },
+      { name: "theme-color", content: "#ffffff" },
     ],
     links: [
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon.png" },
@@ -27,7 +27,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap",
       },
       { rel: "stylesheet", href: appCss },
     ],
@@ -35,6 +35,12 @@ export const Route = createRootRoute({
   component: () => (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();",
+          }}
+        />
         <HeadContent />
       </head>
       <body>
