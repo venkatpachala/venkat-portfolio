@@ -19,17 +19,11 @@ function Home() {
 
   return (
     <>
-      <div className="frame" aria-hidden="true">
-        <span />
-        <span />
-        <span />
-        <span />
-      </div>
       <a href="#content" className="skip-link">
         Skip to content
       </a>
       <Navbar />
-      <main id="content" className="relative z-10 mx-auto w-full max-w-4xl px-5 pb-10 sm:px-8 sm:pb-14">
+      <main id="content" className="relative z-10 mx-auto w-full max-w-4xl px-4 pb-8 sm:px-6 sm:pb-12">
         <Hero />
         <Activity activity={activity} />
         <Skills />
@@ -37,7 +31,7 @@ function Home() {
           <h2 id="work-title" className="text-[11px] tracking-[0.16em] text-faint uppercase">
             Featured projects
           </h2>
-          <div className="mt-5 border-b border-line">
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
             {projects.map((project) => (
               <ProjectRow key={project.slug} project={project} />
             ))}
