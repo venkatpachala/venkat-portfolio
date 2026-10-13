@@ -20,24 +20,48 @@ function LinkedInIcon() {
 
 const iconLink = "inline-flex size-10 items-center justify-center text-fg hover:opacity-50";
 
+const rail = ["Agentic systems", "Retrieval", "Harnesses", "Evaluation", "LLM backends", "Open source"];
+
 export function Hero() {
+  const line = [...rail, ...rail];
+
   return (
-    <section id="top" className="scroll-mt-24 pt-6 pb-2">
-      <div className="flex items-center gap-4">
+    <section id="top" className="scroll-mt-24 pt-6 pb-2 sm:pt-10">
+      <div className="flex items-end justify-between gap-4">
+        <div className="min-w-0">
+          <p className="text-[11px] tracking-[0.22em] text-faint uppercase">AI Engineer</p>
+          <h1 className="name-in mt-3 text-[clamp(3.4rem,15vw,7.4rem)] leading-[0.82] font-medium text-fg">
+            {profile.name}
+          </h1>
+        </div>
         <img
           src="/profile.jpg"
           alt=""
           width={72}
           height={72}
-          className="size-16 rounded-2xl border border-line bg-surface object-contain sm:size-[72px]"
+          className="mb-1 size-14 shrink-0 rounded-2xl border border-line bg-surface object-contain sm:mb-2 sm:size-[72px]"
         />
-        <div>
-          <h1 className="text-2xl font-semibold tracking-tight text-fg sm:text-[2rem]">{profile.name}</h1>
-          <p className="mt-1 text-sm text-muted">AI Engineer</p>
+      </div>
+
+      <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted sm:text-[15px]">
+        I build agentic systems, retrieval, and the backends around them. The model can reason.
+        Policy still decides. Currently working on self-corrective and self-evolving agents.
+      </p>
+
+      <div className="mt-6 overflow-hidden border-y border-line py-2.5">
+        <div className="rail gap-8">
+          {line.map((item, index) => (
+            <span key={`${item}-${index}`} className="text-[11px] tracking-[0.18em] text-faint uppercase">
+              {item}
+              <span className="ml-8 text-fg/30" aria-hidden="true">
+                /
+              </span>
+            </span>
+          ))}
         </div>
       </div>
 
-      <dl className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-3">
+      <dl className="mt-6 grid gap-4 sm:grid-cols-3">
         <div>
           <dt className="text-[11px] tracking-wider text-faint uppercase">Location</dt>
           <dd className="mt-1 flex items-center gap-1.5 text-sm text-fg">
@@ -49,7 +73,7 @@ export function Hero() {
           <dt className="text-[11px] tracking-wider text-faint uppercase">Email</dt>
           <dd className="mt-1 text-sm">
             <a href={`mailto:${socials.email}`} className="inline-flex max-w-full items-center gap-1.5 break-all hover:underline">
-              <Mail className="size-3.5" aria-hidden="true" />
+              <Mail className="size-3.5 shrink-0" aria-hidden="true" />
               {socials.email}
             </a>
           </dd>
@@ -64,12 +88,7 @@ export function Hero() {
         </div>
       </dl>
 
-      <p className="mt-6 max-w-2xl text-sm leading-relaxed text-fg sm:text-[15px]">
-        I build agentic systems, retrieval, and the backends around them. The model can reason.
-        Policy still decides. Currently working on self-corrective and self-evolving agents.
-      </p>
-
-      <div className="mt-4 flex items-center gap-1">
+      <div className="mt-3 flex items-center gap-1">
         <a href={socials.x} target="_blank" rel="noreferrer" aria-label="X" className={iconLink}>
           <XIcon />
         </a>

@@ -36,10 +36,10 @@ function ThemeToggle() {
 
 export function Navbar() {
   return (
-    <header className="relative z-30 bg-bg/70 backdrop-blur-md">
+    <header className="sticky top-0 z-30 bg-bg/75 backdrop-blur-md">
       <nav
         aria-label="Page"
-        className="mx-auto flex max-w-4xl items-center gap-x-6 px-4 py-3 sm:px-6"
+        className="mx-auto flex max-w-4xl items-center gap-x-4 px-5 py-2 sm:gap-x-6 sm:px-8"
       >
         <div className="flex flex-1 flex-wrap items-center justify-center gap-x-6 gap-y-1 sm:justify-start">
           {links.map((link) => (
