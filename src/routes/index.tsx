@@ -6,7 +6,6 @@ import { Navbar } from "@/components/navbar";
 import { ProjectRow } from "@/components/featured-project";
 import { Research } from "@/components/research";
 import { Skills } from "@/components/skills";
-import { KernelField } from "@/components/kernel-field";
 import { fetchGithubActivity } from "@/data/github";
 import { projects } from "@/data/projects";
 
@@ -20,7 +19,6 @@ function Home() {
 
   return (
     <>
-      <KernelField />
       <a href="#content" className="skip-link">
         Skip to content
       </a>
