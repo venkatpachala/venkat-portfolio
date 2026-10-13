@@ -36,7 +36,7 @@ function ThemeToggle() {
 
 export function Navbar() {
   return (
-    <header className="relative z-30 bg-bg/80 backdrop-blur-md">
+    <header className="relative z-30 bg-bg/70 backdrop-blur-md">
       <nav
         aria-label="Page"
         className="mx-auto flex max-w-4xl items-center gap-x-6 px-4 py-3 sm:px-6"

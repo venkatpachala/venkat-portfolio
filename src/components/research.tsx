@@ -5,7 +5,7 @@ export function Research() {
   const graphify = openSource[0];
 
   return (
-    <section id="now" className="scroll-mt-24 py-8" aria-labelledby="now-title">
+    <section id="now" className="scroll-mt-24 py-6 sm:py-8" aria-labelledby="now-title">
       <h2 id="now-title" className="text-[11px] tracking-[0.16em] text-faint uppercase">
         Now
       </h2>

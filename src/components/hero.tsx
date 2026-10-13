@@ -37,7 +37,7 @@ export function Hero() {
         </div>
       </div>
 
-      <dl className="mt-8 grid gap-4 sm:grid-cols-3">
+      <dl className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-3">
         <div>
           <dt className="text-[11px] tracking-wider text-faint uppercase">Location</dt>
           <dd className="mt-1 flex items-center gap-1.5 text-sm text-fg">
@@ -48,7 +48,7 @@ export function Hero() {
         <div>
           <dt className="text-[11px] tracking-wider text-faint uppercase">Email</dt>
           <dd className="mt-1 text-sm">
-            <a href={`mailto:${socials.email}`} className="inline-flex items-center gap-1.5 hover:underline">
+            <a href={`mailto:${socials.email}`} className="inline-flex max-w-full items-center gap-1.5 break-all hover:underline">
               <Mail className="size-3.5" aria-hidden="true" />
               {socials.email}
             </a>

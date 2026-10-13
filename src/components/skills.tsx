@@ -40,7 +40,7 @@ function isDark(hex: string) {
 
 export function Skills() {
   return (
-    <section id="stack" className="scroll-mt-24 py-8" aria-labelledby="stack-title">
+    <section id="stack" className="scroll-mt-24 py-6 sm:py-8" aria-labelledby="stack-title">
       <h2 id="stack-title" className="text-[11px] tracking-[0.16em] text-faint uppercase">
         Tech stack
       </h2>

@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar";
 import { ProjectRow } from "@/components/featured-project";
 import { Research } from "@/components/research";
 import { Skills } from "@/components/skills";
+import { KernelField } from "@/components/kernel-field";
 import { fetchGithubActivity } from "@/data/github";
 import { projects } from "@/data/projects";
 
@@ -19,15 +20,16 @@ function Home() {
 
   return (
     <>
+      <KernelField />
       <a href="#content" className="skip-link">
         Skip to content
       </a>
       <Navbar />
-      <main id="content" className="mx-auto w-full max-w-4xl px-4 pb-10 sm:px-6">
+      <main id="content" className="relative z-10 mx-auto w-full max-w-4xl px-4 pb-8 sm:px-6 sm:pb-12">
         <Hero />
         <Activity activity={activity} />
         <Skills />
-        <section id="projects" className="scroll-mt-24 py-8" aria-labelledby="work-title">
+        <section id="projects" className="scroll-mt-24 py-6 sm:py-8" aria-labelledby="work-title">
           <h2 id="work-title" className="text-[11px] tracking-[0.16em] text-faint uppercase">
             Featured projects
           </h2>

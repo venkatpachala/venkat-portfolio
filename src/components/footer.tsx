@@ -22,7 +22,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="scroll-mt-24 py-8" aria-labelledby="contact-title">
+    <section id="contact" className="scroll-mt-24 py-6 sm:py-8" aria-labelledby="contact-title">
       <h2 id="contact-title" className="text-[11px] tracking-[0.16em] text-faint uppercase">
         Let's work together
       </h2>
