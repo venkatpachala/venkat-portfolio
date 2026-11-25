@@ -65,8 +65,8 @@ export function Hero() {
       </dl>
 
       <p className="mt-6 max-w-2xl text-sm leading-relaxed text-fg sm:text-[15px]">
-        I build agentic systems, retrieval, and the backends around them. The model can reason.
-        Policy still decides. Currently working on self-corrective and self-evolving agents.
+        I build AI systems: agent backends, retrieval, and the inference infrastructure around them.
+        Open to remote work. Currently building TypeLLM, a Python backend for reliable LLM workloads.
       </p>
 
       <div className="mt-4 flex items-center gap-1">

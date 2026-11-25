@@ -2,10 +2,10 @@ export const profile = {
   name: "Venkat",
   handle: "@venkatpachala",
   mark: "venkat.",
-  role: "AI Engineer · AI Backend · Agent Systems",
+  role: "AI Engineer",
   summary:
-    "I build agentic AI systems, retrieval infrastructure, evaluation harnesses and production LLM backends.",
-  status: "Currently exploring self-corrective & self-evolving agents",
+    "I build AI systems: agent backends, retrieval, and the inference infrastructure around them.",
+  status: "Building TypeLLM",
 };
 
 export const research = {

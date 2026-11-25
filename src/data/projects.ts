@@ -25,15 +25,34 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "codeturtle",
+    slug: "typellm",
     index: "01",
+    name: "TypeLLM",
+    repo: "venkatpachala/TypeLLM",
+    featured: true,
+    category: "AI inference backend",
+    status: "Building",
+    summary:
+      "A production-oriented inference backend in Python for scalable, fault-tolerant LLM workloads. Currently building the async engine: admission, timeouts, and cancellation-safe execution.",
+    pipeline: ["Request", "Admission", "Engine", "Providers", "Metrics"],
+    points: [
+      "Concurrency control, request admission, timeouts, and cancellation",
+      "Retries, backoff, circuit breakers, and backpressure",
+      "Multi-provider routing, streaming, and usage tracking",
+    ],
+    tech: ["Python", "FastAPI", "PostgreSQL", "Redis", "Workers"],
+    links: [{ label: "GitHub", href: "https://github.com/venkatpachala/TypeLLM" }],
+  },
+  {
+    slug: "codeturtle",
+    index: "02",
     name: "CodeTurtle",
     repo: "venkatpachala/CodeTurtle",
     featured: true,
-    category: "Agentic code review / developer infrastructure",
+    category: "Local-first code review",
     status: "Active",
     summary:
-      "A local-first CLI that reviews a GitHub pull request against the repository. Policy, not the model, makes the review decision.",
+      "A local-first, multi-agent code review system with repository intelligence, persistent memory, and observability. Policy, not the model, makes the review decision.",
     pipeline: ["PR", "Change units", "Graphify", "Agent", "Proof", "Policy", "Decision"],
     principle: {
       quote: "LLMs reason. Policy decides.",
@@ -57,15 +76,15 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "d2c-support",
-    index: "02",
-    name: "D2C AI Customer Support",
-    repo: "venkatpachala/AI-Customer-Support-",
+    slug: "resolv",
+    index: "03",
+    name: "Resolv",
+    repo: "venkatpachala/Resolv",
     featured: true,
-    category: "Multi-agent support backend",
+    category: "D2C customer support",
     status: "Built",
     summary:
-      "A multi-agent backend for returns, refunds, cancellations, and policy questions. Retrieval, tools, checks, and human escalation stay separate steps.",
+      "A multi-agent support platform for D2C brands. It handles returns, refunds, cancellations, and policy questions with planning, tools, policy-grounded RAG, and human escalation.",
     pipeline: ["User", "Guardrails", "Supervisor", "Planner", "Tools / RAG", "Verifier", "HITL", "Response"],
     principle: {
       quote: "Agents can reason — but sensitive actions remain controlled.",
@@ -80,37 +99,7 @@ export const projects: Project[] = [
     ],
     tech: ["Python", "FastAPI", "LangGraph", "RAG", "Shopify", "Stripe"],
     moreTech: ["Pinecone", "LangSmith", "Prometheus", "Grafana", "Ollama", "Guardrails"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/venkatpachala/AI-Customer-Support-",
-      },
-    ],
-  },
-  {
-    slug: "harnesslab",
-    index: "03",
-    name: "HarnessLab",
-    repo: "venkatpachala/HarnessLab",
-    featured: false,
-    category: "Agent harness / evaluation",
-    status: "Experiment",
-    summary:
-      "A lab that keeps the model, tasks, and budget fixed and changes only the execution harness. Scores come from the resulting world state, not an LLM judge.",
-    pipeline: ["Task", "Harness", "Tools", "Oracle", "Compare"],
-    points: [
-      "Direct, planner, and recovery loops on the same task set",
-      "Tool faults are injected; recovery is a retry budget",
-      "Runs are logged and scored by deterministic state oracles",
-    ],
-    tech: ["Python", "Agent traces", "Evaluation", "Fault injection", "Harness design"],
-    links: [
-      { label: "GitHub", href: "https://github.com/venkatpachala/HarnessLab" },
-      {
-        label: "Notes",
-        href: "https://github.com/venkatpachala/HarnessLab/blob/main/RESEARCH_NOTE.md",
-      },
-    ],
+    links: [{ label: "GitHub", href: "https://github.com/venkatpachala/Resolv" }],
   },
   {
     slug: "opensearch",
@@ -118,10 +107,10 @@ export const projects: Project[] = [
     name: "OpenSearch",
     repo: "venkatpachala/OpenSearch",
     featured: false,
-    category: "Self-correcting experiments",
+    category: "Self-correcting research agent",
     status: "Research",
     summary:
-      "A goal-driven agent for multi-step experiments. After every tool call it checks execution against a frozen goal, then recovers inside a bounded budget.",
+      "A self-correcting agent for multi-step research and experiments. After every tool call it checks a frozen goal, then recovers inside a bounded budget. The evaluator, not the planner, declares success.",
     pipeline: ["Goal", "Plan", "Tool", "Evaluate", "Recover"],
     principle: {
       quote: "The evaluator declares success. The planner does not.",

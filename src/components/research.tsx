@@ -1,4 +1,3 @@
-import { research } from "@/data/profile";
 import { openSource } from "@/data/openSource";
 
 export function Research() {
@@ -14,13 +13,21 @@ export function Research() {
           <span className="absolute top-1.5 -left-[5px] size-2.5 rounded-full bg-fg" aria-hidden="true" />
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <p className="text-sm font-semibold">
-              Research <span className="font-normal text-muted">· {research.title}</span>
+              Building{" "}
+              <a
+                href="https://github.com/venkatpachala/TypeLLM"
+                target="_blank"
+                rel="noreferrer"
+                className="font-normal hover:underline"
+              >
+                · TypeLLM
+              </a>
             </p>
             <p className="text-xs text-faint">2026</p>
           </div>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-            Agents that inspect their own runs, find what failed, and change the harness from
-            evaluation rather than another prompt.
+            A Python inference backend for LLM workloads. Building the async engine first:
+            concurrency, request admission, timeouts, cancellation, retries, and fault tolerance.
           </p>
         </li>
         {graphify ? (
